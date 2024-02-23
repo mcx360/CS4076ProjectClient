@@ -41,8 +41,10 @@ public class Controller {
     @FXML
     private Button stop;
 
-    private String textFieldInput;
+    private boolean createClassButtonCondition;
+    private boolean removeClassButtonCondition;
 
+    private ArrayList<String> attributes = new ArrayList<String>();
 
     @FXML
         // This method is called by the FXMLLoader when initialization is complete
@@ -64,9 +66,7 @@ public class Controller {
                                 "\tModule code e.g [CS4076]\n" +
                                 "\tdate e.g [YYYYMMDD]\n" +
                                 "\tTime e.g [HH:MM-HH:MM]\n");
-
-                        mainText.setText(mainText.getText()+mainTextField.getText());
-
+                                createClassButtonCondition=true;
                     }
                 }
         );
@@ -78,16 +78,36 @@ public class Controller {
                         mainText.setText(mainText.getText()+"Please enter the following info in the specified format:\n"+
                                 "\tCourse code e.g [LM051]\n"+
                                 "\tModule code e.g [CS4076]\n");
+                                removeClassButtonCondition=true;
                     }
                 }
         );
-
         }
 
         public void updateTextField (ActionEvent e){
-            mainText.setText(mainText.getText() + "<user>" + mainTextField.getText() + "\n");
+            if(removeClassButtonCondition & createClassButtonCondition ==true){
+                removeClassButtonCondition=false;
+                createClassButtonCondition=false;
+                attributes.clear();
+            }
+            String input = mainTextField.getText();
+            mainText.setText(mainText.getText() + "<user>" + input + "\n");
+            if(createClassButtonCondition==true){
+                attributes.add(input);
+                if(attributes.size()==4){
+                    createClassButtonCondition=false;
+                    //make code to send of attributes and then clear the ArrayList
+                }
+            }
+            if(removeClassButtonCondition==true){
+                attributes.add(input);
+                    if(attributes.size()==2){
+                        removeClassButtonCondition=false;
+                        //make code to send of attributes and then clear the ArrayList
+                    }
+                }
+
             mainTextField.clear();
         }
 
-    }
-
+}
