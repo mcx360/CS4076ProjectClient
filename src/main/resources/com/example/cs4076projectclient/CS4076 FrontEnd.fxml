@@ -33,6 +33,7 @@
 -->
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
@@ -164,7 +165,9 @@
                                                                     </Label>
                                                                 </children>
                                                             </GridPane>
-                                                            <DatePicker layoutX="71.0" layoutY="36.0" />
+                                                            <DatePicker layoutX="6.0" layoutY="62.0" />
+                                          <ComboBox fx:id="selectYear" layoutX="183.0" layoutY="61.0" prefHeight="26.0" prefWidth="124.0" promptText="Enter year" />
+                                          <TextField layoutX="9.0" layoutY="10.0" prefHeight="40.0" prefWidth="299.0" promptText="Enter Course code or room number e.g LM121 / S206" />
                                                         </children></AnchorPane>
                                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                                                         <children>
@@ -190,7 +193,7 @@
                                                                                                 <children>
                                                                                                     <AnchorPane layoutX="-30.0" layoutY="258.0" prefHeight="688.0" prefWidth="188.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                                                                         <children>
-                                                                                                            <ListView layoutX="-6.0" layoutY="169.0" prefHeight="688.0" prefWidth="188.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                                                            <ListView fx:id="classParticipants" layoutX="-6.0" layoutY="169.0" prefHeight="688.0" prefWidth="188.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                                                                                         </children>
                                                                                                     </AnchorPane>
                                                                                                 </children>
@@ -209,7 +212,7 @@
                                                                                     <TextField fx:id="mainTextField" onAction="#getContents" prefHeight="60.0" prefWidth="203.0" promptText="Enter text here" style="-fx-background-color: #COCOCO; -fx-background-radius: 15;" />
                                                                                     <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="97.0" style="-fx-background-color: #8CA0B1; -fx-background-radius: 15;" text="Create class" />
                                                                                     <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="97.0" style="-fx-background-color: #8CA0B1; -fx-background-radius: 15;" text="Remove class" />
-                                                                                    <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="97.0" style="-fx-background-color: #8CA0B1; -fx-background-radius: 15;" text="Display class" />
+                                                                                    <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="97.0" style="-fx-background-color: #8CA0B1; -fx-background-radius: 15;" text="Add class Participants" wrapText="true" />
                                                                                     <Line endX="178.4927215576172" endY="-0.017997324466705322" startX="-100.0" stroke="#3e8ede" />
                                                                                     <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" style="-fx-background-radius: 15;">
                                                                                         <font>

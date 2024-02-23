@@ -4,7 +4,6 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class ClientApplication extends Application{
@@ -15,9 +14,6 @@ public class ClientApplication extends Application{
             // Load the FXML file
             FXMLLoader loader = new FXMLLoader(getClass().getResource("CS4076 FrontEnd.fxml"));
             Parent root = loader.load();
-
-            //Image appIcon = new Image("email.jpg");
-            //primaryStage.getIcons().add(appIcon);
 
             // Create the scene
             Scene scene = new Scene(root, 1280, 800);
