@@ -12,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
+import javafx.stage.Popup;
 
 public class Controller {
     @FXML
@@ -41,6 +42,9 @@ public class Controller {
     @FXML
     private Button stop;
 
+    @FXML
+    private Button settingsButton;
+
     private boolean createClassButtonCondition;
     private boolean removeClassButtonCondition;
 
@@ -56,6 +60,26 @@ public class Controller {
         noParticipants.add("the participants e.g");
         noParticipants.add("Proffesors, Ta's and students");
         classParticipants.getItems().addAll(noParticipants);
+
+        Label label = new Label("This popup works");
+        Popup popup = new Popup();
+        label.setStyle("-fx-background-color: white;");
+        label.setStyle("-fx-border-color: black");
+        popup.getContent().add(label);
+        label.setMinWidth(100);
+        label.setMinHeight(100);
+        popup.setAutoHide(true);
+
+        settingsButton.setOnAction(
+                new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent actionEvent) {
+                        if(!popup.isShowing()){
+                            popup.show(ClientApplication.primaryStage);
+                        }
+                    }
+                }
+        );
 
         createClassButton.setOnAction(
                 new EventHandler<ActionEvent>() {

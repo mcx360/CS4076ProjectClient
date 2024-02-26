@@ -214,7 +214,7 @@
                                                                                     <Button fx:id="removeClassButton" mnemonicParsing="false" prefHeight="60.0" prefWidth="97.0" style="-fx-background-color: #8CA0B1; -fx-background-radius: 15;" text="Remove class" />
                                                                                     <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="97.0" style="-fx-background-color: #8CA0B1; -fx-background-radius: 15;" text="Add class Participants" wrapText="true" />
                                                                                     <Line endX="178.4927215576172" endY="-0.017997324466705322" startX="-100.0" stroke="#3e8ede" />
-                                                                                    <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" style="-fx-background-radius: 15;">
+                                                                                    <Button fx:id="settingsButton" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" style="-fx-background-radius: 15;">
                                                                                         <font>
                                                                                             <Font size="27.0" />
                                                                                         </font>
